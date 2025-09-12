@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speech Recognition App</title>
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Three.js for 3D mic -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+</head>
+
+<body
+  class="bg-gradient-to-br from-indigo-900 via-purple-800 to-pink-700 text-white min-h-screen flex flex-col items-center justify-center p-6">
+  <!-- Header -->
+  <header class="mb-6 text-center">
+    <h1 class="text-4xl font-extrabold mb-2">🎤 Smart Speech Recognition</h1>
+    <p class="text-lg text-gray-200">Convert voice to text in real-time with style ✨</p>
+  </header>
+
+  <!-- Main Container -->
+  <main class="w-full max-w-4xl bg-white/10 backdrop-blur-md rounded-2xl shadow-lg p-6">
+    <!-- Mic 3D Canvas -->
+    <div id="mic-3d" class="w-full h-64 mb-6 rounded-lg"></div>
+
+    <!-- Controls -->
+    <div class="flex justify-center gap-4 mb-6">
+      <button id="startBtn" class="px-6 py-3 bg-green-600 hover:bg-green-700 rounded-xl font-bold shadow-md">Start
+        🎙️</button>
+      <button id="stopBtn" class="px-6 py-3 bg-red-600 hover:bg-red-700 rounded-xl font-bold shadow-md">Stop ✋</button>
+      <button id="clearBtn" class="px-6 py-3 bg-yellow-600 hover:bg-yellow-700 rounded-xl font-bold shadow-md">Clear
+        🧹</button>
+    </div>
+
+    <!-- Transcript Area -->
+    <section class="mb-6">
+      <h2 class="text-2xl font-semibold mb-2">Transcript</h2>
+      <textarea id="transcript" rows="8" readonly
+        class="w-full p-4 rounded-lg bg-black/40 text-white border border-gray-500 resize-none"></textarea>
+    </section>
+
+    <!-- Stats -->
+    <section class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6 text-center">
+      <div class="bg-black/40 rounded-lg p-4">
+        <h3 class="text-xl font-bold">📝 Words</h3>
+        <p id="wordCount" class="text-2xl">0</p>
+      </div>
+      <div class="bg-black/40 rounded-lg p-4">
+        <h3 class="text-xl font-bold">📑 Segments</h3>
+        <p id="segmentCount" class="text-2xl">0</p>
+      </div>
+      <div class="bg-black/40 rounded-lg p-4 col-span-2 sm:col-span-1">
+        <h3 class="text-xl font-bold">⌛ Duration</h3>
+        <p id="duration" class="text-2xl">0s</p>
+      </div>
+    </section>
+
+    <!-- Tools -->
+    <section class="flex flex-wrap justify-center gap-4">
+      <button id="copyBtn" class="px-5 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg">📋 Copy</button>
+      <button id="downloadBtn" class="px-5 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg">⬇️ Download</button>
+      <button id="searchBtn" class="px-5 py-2 bg-pink-600 hover:bg-pink-700 rounded-lg">🔍 Search</button>
+    </section>
+  </main>
+
+  <!-- History -->
+  <section class="w-full max-w-4xl mt-8 bg-white/10 backdrop-blur-md rounded-2xl shadow-lg p-6">
+    <h2 class="text-2xl font-bold mb-4">📜 History</h2>
+    <ul id="history" class="space-y-3"></ul>
+  </section>
+
+  <!-- App Script -->
+  <script src="app.js" defer></script>
+</body>
+
+</html>
