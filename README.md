@@ -2,7 +2,8 @@
 
 Convert voice to text in real-time with style ✨
 
-![Smart Speech Recognition Screenshot](./assets/smart-speech-screenshot.png)
+<img width="702" height="967" alt="Screenshot 2025-09-09 092936" src="https://github.com/user-attachments/assets/eb780abf-919e-4e36-9534-f20e2b771308" />
+
 
 > A clean, modern web app that captures microphone input, transcribes speech in real-time, and gives handy tools for working with transcripts (copy, download, search, history).
 
